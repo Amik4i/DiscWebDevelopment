@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styleR.css"> <!-- Link to external CSS file -->
+    <link rel="icon" href="FaviconDiscServ.png">
+    <style>
+        /* Animation for page load */
+        body {
+            opacity: 0;
+            animation: fadeInEffect 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeInEffect {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1 class="Letter">Welcome to My Website</h1>
+        <nav>
+            <div class="nav-buttons left-align">               
+                <button class="nav-button" onclick="window.location.href='about.html';">Over Ons</button>
+                <button class="nav-button" onclick="window.location.href='contacts.html';">Contact</button>
+                <button class="nav-button" onclick="window.location.href='DiscServpage.html';">Discord</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Link to an external JavaScript file (optional) -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
