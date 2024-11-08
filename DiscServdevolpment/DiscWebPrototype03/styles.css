@@ -1,0 +1,152 @@
+/* Style sheet to animate the monkey image as a background */
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, #92a8d1, #f7cac9);
+    overflow: hidden;
+    position: relative;
+}
+
+#animated-bg {
+    width: 100vw;
+    height: 100vh;
+    background: url('Disc.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    animation: floatAnimation 8s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+    z-index: -1;
+    filter: brightness(1.1) contrast(1.2);
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(10px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(4deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(-15px) rotate(-4deg);
+    }
+}
+
+.content {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: left;
+    gap: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.general-info {
+    background-color: rgba(92, 168, 209, 0.8); /* Themed color */
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 350px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.additional-info {
+    background-color: rgba(247, 202, 201, 0.8); /* Themed color */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 45%;
+    margin: 10px;
+    width: 45%;
+    position: fixed;
+    bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.additional-info.left {
+    left: 5%;
+    transform: translateX(0);
+}
+
+.additional-info.right {
+    right: 5%;
+    transform: translateX(0);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Button styling with turquoise color and animated border */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #40e0d0; /* Turquoise color */
+    color: #ffffff;
+    border: 3px solid #40e0d0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: #3acfc1;
+    transform: scale(1.05);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    animation: borderAnimation 2s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #40e0d0;
+    }
+    50% {
+        border-color: #ffffff;
+    }
+    100% {
+        border-color: #40e0d0;
+    }
+}
